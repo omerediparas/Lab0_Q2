@@ -1,4 +1,10 @@
+/**
+ * CS102-03  Lab0_Q2   05/02/23
+ * Contributors: Ömer Edip Aras, İbrahim Çaycı, Mustafa Çağlar and Yiğit Özhan 
+ * This program is menu-driven console application that allows users to create and modify an array with a proper console design.
+ */
 import java.util.Scanner;
+
 public class Management {
     /**
      * This main method provides an appropriately designed string based or printed user interface 

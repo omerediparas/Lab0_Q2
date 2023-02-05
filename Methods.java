@@ -1,6 +1,7 @@
 /**
  * CS102-03  Lab0_Q2   05/02/23
  * Contributors: Ömer Edip Aras, İbrahim Çaycı, Mustafa Çağlar and Yiğit Özhan 
+ * Distributions of methods will be added to README file.
  * This program is menu-driven console application that allows users to create and modify an array with a proper console design.
  */
 public class Methods {
@@ -12,18 +13,6 @@ public class Methods {
     */
     public int createArray(int arraySize){
        /* TODO */ 
-    }
-    
-    /**
-     * This method provides an appropriately designed string based or printed user interface 
-     * Asks users to type specific characters to perform operations via calling other methods
-     * (e.g. 1 to create array 2 to sum up odd indexes etc)
-     * Main is said to be obligatory. Therefore I removed display method on the other file.
-    */
-    public void display (){
-        /* TODO 
-
-        createArray*/ 
     }
 
     /**
@@ -45,13 +34,28 @@ public class Methods {
     }
 
     /**
+     * DONE BY ÖMER EDİP ARAS
      * This method finds the AVERAGE INTEGER and then creates a new array by substracting this average number from each element.
      * example {1,2,3,4,5,6} ave = 3  newArray = {-2,-1,0,1,2,3}
      * @param array
      * @return the inverted / substracted array
      */
-    public int invertedArray(int [] array){
-         /* TODO */ 
+    public int [] invertedArray(int [] array){
+          
+          // calculating the average
+          int sum = 0; 
+          for(int element: array)
+          {
+               sum += element;
+          }
+          int average = sum / array.length;
+          
+          // substracting average from each element and returning the modified array. 
+          for(int i = 0; i < array.length;i++)
+          {
+               array[i] -= average; 
+          }
+          return array;
     }
 
     /**
