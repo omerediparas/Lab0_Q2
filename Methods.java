@@ -11,7 +11,7 @@ public class Methods {
      * @param arraySize size of the array that we are creating.
      * @return randomly determined integer array.
     */
-    public int createArray(int arraySize){
+    public int[] createArray(int arraySize){
        /* TODO */ 
     }
 
@@ -59,23 +59,41 @@ public class Methods {
     }
 
     /**
+     * DONE BY MUSTAFA ÇAĞLAR
      * This method calculates the sum of the array elements with even indexes 
      * @param array
      * @return returns the elements of the array with even indexes.
      */
     public int sumOfEven(int [] array){
-
+        int totalSumOfEven=0;
+        
+        for(int i=0;i<array.length;i++)
+        {
+            if(i%2==0)
+            {
+                totalSumOfEven=totalSumOfEven+array[i];
+            }
+        }
+        return totalSumOfEven;
     }
 
     /**
+     * DONE BY MUSTAFA ÇAĞLAR
      * This method calculates the sum of the array elements with odd indexes 
      * @param array
      * @return returns the elements of the array with odd indexes.
      */
     public int sumOfOdd(int [] array){
+        int totalSumOfOdd=0;
+        
+        for(int i=0;i<array.length;i++)
+        {
+            if(i%2==1)
+            {
+                totalSumOfOdd=totalSumOfOdd+array[i];
+            }
+        }
+        return totalSumOfOdd;
 
     }
-
-
-
 }
