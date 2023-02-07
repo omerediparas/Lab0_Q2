@@ -36,19 +36,19 @@ public class Management {
             int choice = scanner.nextInt();
             scanner.nextLine();
             if (choice == 1) {
-                method.getMinNumber(numbers);
+                System.out.println(method.getMinNumber(numbers));
             }
             else if (choice == 2) {
-                method.getMaxNumber(numbers);
+                System.out.println(method.getMaxNumber(numbers));
             }
             else if (choice == 3) {
-                method.invertedArray(numbers);
+                System.out.println( Arrays.toString(method.invertedArray(numbers)) );
             }
             else if (choice == 4) {
-                method.sumOfOdd(numbers);
+                System.out.println(method.sumOfOdd(numbers));
             }
             else if (choice == 5) {
-                method.sumOfEven(numbers);
+                System.out.println(method.sumOfEven(numbers));
             }
             else {
                 isExist = true;
