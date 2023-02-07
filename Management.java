@@ -7,12 +7,53 @@ import java.util.Scanner;
 
 public class Management {
     /**
+     * DONE BY İBRAHİM ÇAYCI
      * This main method provides an appropriately designed string based or printed user interface 
      * Asks users to type specific characters to perform operations via calling other methods
      * (e.g. 1 to create array 2 to sum up odd indexes etc)
      * Main is said to be obligatory. Therefore I removed display method on the other file.
     */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int arraySize = scanner.nextInt();
+        scanner.nextLine();
+
+        Methods method = new Methods();
+        int[] numbers = method.createArray(arraySize);
         
+        boolean isExist = false;
+        while (!isExist) {
+            System.out.println("------------------ MENU ------------------ \n"
+                            + "1-) Show the minimum number of the array \n"
+                            + "2-) Show the maximum number of the array \n"
+                            + "3-) Show the difference of the numbers from the average of the array \n"
+                            + "4-) Show the sum of the numbers with odd inexes \n"
+                            + "5-) Show the sum of the numbers with even indexes \n"
+                            + "6-) Exit \n");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            if (choice == 1) {
+                method.getMinNumber(numbers);
+            }
+            else if (choice == 2) {
+                method.getMaxNumber(numbers);
+            }
+            else if (choice == 3) {
+                method.invertedArray(numbers);
+            }
+            else if (choice == 4) {
+                method.sumOfOdd(numbers);
+            }
+            else if (choice == 5) {
+                method.sumOfEven(numbers);
+            }
+            else {
+                isExist = true;
+            }
+        }
+
     }
 }
