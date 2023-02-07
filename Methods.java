@@ -7,30 +7,55 @@
 public class Methods {
     
     /**
+     * DONE BY YİĞİT ÖZHAN
      * This method creates an array whose numbers are randomly selected.
      * @param arraySize size of the array that we are creating.
      * @return randomly determined integer array.
     */
     public int[] createArray(int arraySize){
-       /* TODO */ 
+       int array[] = new int[arraySize];
+       for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 100); 
+       }
+       return array;
     }
 
     /**
+     * DONE BY YİĞİT ÖZHAN
      * This method finds the gratest element in an array
      * @param array 
      * @return the greatest integer of an array
      */
     public int getMaxNumber(int [] array){
-         /* TODO */ 
+        if (array.length == 0) {
+            return 0;
+        }
+        int max = array[0];
+        for (int element: array) {
+            if (element > max) {
+                max = element;
+            }
+        }
+        return max;
     }
 
     /**
+     * DONE BY YİĞİT ÖZHAN
      * This method finds the smallest element in an array
      * @param array 
      * @return the smallest integer of an array
      */
     public int getMinNumber(int [] array){
-         /* TODO */ 
+        if (array.length == 0) {
+            return 0;
+        }
+        int min = array[0];
+        for (int element: array) {
+            if (min > element) {
+                min = element;
+            }
+        }
+        return min;
     }
 
     /**

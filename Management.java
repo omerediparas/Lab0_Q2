@@ -29,7 +29,7 @@ public class Management {
                             + "1-) Show the minimum number of the array \n"
                             + "2-) Show the maximum number of the array \n"
                             + "3-) Show the difference of the numbers from the average of the array \n"
-                            + "4-) Show the sum of the numbers with odd inexes \n"
+                            + "4-) Show the sum of the numbers with odd indexes \n"
                             + "5-) Show the sum of the numbers with even indexes \n"
                             + "6-) Exit \n");
             
