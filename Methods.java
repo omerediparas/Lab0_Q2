@@ -1,6 +1,6 @@
 /**
  * CS102-03  Lab0_Q2   05/02/23
- * Contributors: Ömer Edip Aras, İbrahim Çaycı, Mustafa Çağlar and Yiğit Özhan 
+ * Contributors: Ömer Edip Aras, İbrahim Çaycı, Mustafa Çağlar, and Yiğit Özhan 
  * Distributions of methods will be added to README file.
  * This program is menu-driven console application that allows users to create and modify an array with a proper console design.
  */
@@ -13,9 +13,10 @@ public class Methods {
      * @return randomly determined integer array.
     */
     public int[] createArray(int arraySize){
+        // int begin = 0; int end = 101
        int array[] = new int[arraySize];
        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * 100); 
+            array[i] = (int) (Math.random() * 101); 
        }
        return array;
     }
@@ -63,24 +64,24 @@ public class Methods {
      * This method finds the AVERAGE INTEGER and then creates a new array by substracting this average number from each element.
      * example {1,2,3,4,5,6} ave = 3  newArray = {-2,-1,0,1,2,3}
      * @param array
-     * @return the inverted / substracted array
+     * @return the modified / substracted array
      */
-    public int [] invertedArray(int [] array){
+    public int [] modifiedArray(int [] array){    
+        // calculating the average
+        int sum = 0; 
+        for(int element: array)
+        {
+            sum += element;
+        }
+        int average = sum / array.length;
           
-          // calculating the average
-          int sum = 0; 
-          for(int element: array)
-          {
-               sum += element;
-          }
-          int average = sum / array.length;
-          
-          // substracting average from each element and returning the modified array. 
-          for(int i = 0; i < array.length;i++)
-          {
-               array[i] -= average; 
-          }
-          return array;
+        // substracting average from each element and returning the modified array. 
+        int [] modifiedArray = new int [array.length];
+        for(int i = 0; i < array.length;i++)
+        {
+            modifiedArray[i] = array[i] - average; 
+        }
+        return modifiedArray;
     }
 
     /**
@@ -90,13 +91,13 @@ public class Methods {
      * @return returns the elements of the array with even indexes.
      */
     public int sumOfEven(int [] array){
-        int totalSumOfEven=0;
+        int totalSumOfEven = 0;
         
-        for(int i=0;i<array.length;i++)
+        for(int i = 0;i < array.length;i++)
         {
-            if(i%2==0)
+            if(i % 2 == 0)
             {
-                totalSumOfEven=totalSumOfEven+array[i];
+                totalSumOfEven += array[i];
             }
         }
         return totalSumOfEven;
@@ -109,13 +110,13 @@ public class Methods {
      * @return returns the elements of the array with odd indexes.
      */
     public int sumOfOdd(int [] array){
-        int totalSumOfOdd=0;
+        int totalSumOfOdd = 0;
         
-        for(int i=0;i<array.length;i++)
+        for(int i = 0;i < array.length;i++)
         {
-            if(i%2==1)
+            if(i % 2 == 1)
             {
-                totalSumOfOdd=totalSumOfOdd+array[i];
+                totalSumOfOdd += array[i];
             }
         }
         return totalSumOfOdd;

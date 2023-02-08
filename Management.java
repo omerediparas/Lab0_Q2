@@ -4,6 +4,7 @@
  * This program is menu-driven console application that allows users to create and modify an array with a proper console design.
  */
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Management {
     /**
@@ -18,7 +19,7 @@ public class Management {
 
         System.out.print("Enter the size of the array: ");
         int arraySize = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); //??
 
         Methods method = new Methods();
         int[] numbers = method.createArray(arraySize);
@@ -33,26 +34,40 @@ public class Management {
                             + "5-) Show the sum of the numbers with even indexes \n"
                             + "6-) Exit \n");
             
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-            if (choice == 1) {
-                System.out.println(method.getMinNumber(numbers));
+            System.out.print("Select an operation: ");
+            if(scanner.hasNextInt())
+            {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                if (choice == 1) {
+                    System.out.println("result: " +method.getMinNumber(numbers));
+                }
+                else if (choice == 2) {
+                    System.out.println("result: " +method.getMaxNumber(numbers));
+                }
+                else if (choice == 3) {
+                    System.out.println("result: " +Arrays.toString(method.modifiedArray(numbers)) );
+                }
+                else if (choice == 4) {
+                    System.out.println("result: " +method.sumOfOdd(numbers));
+                }
+                else if (choice == 5) {
+                    System.out.println("result: " +method.sumOfEven(numbers));
+                }
+                else if (choice == 6){
+                    isExist = true;
+                    System.out.println("Exit");
+                }
+                else
+                {
+                    System.out.println("Unspecified character.");
+                }
             }
-            else if (choice == 2) {
-                System.out.println(method.getMaxNumber(numbers));
+            else
+            {
+                System.out.println("Unspecified character.");
             }
-            else if (choice == 3) {
-                System.out.println( Arrays.toString(method.invertedArray(numbers)) );
-            }
-            else if (choice == 4) {
-                System.out.println(method.sumOfOdd(numbers));
-            }
-            else if (choice == 5) {
-                System.out.println(method.sumOfEven(numbers));
-            }
-            else {
-                isExist = true;
-            }
+          
         }
 
     }
